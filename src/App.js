@@ -1,12 +1,12 @@
 import './App.css';
-import {createStore} from 'redux'
+import store from './store'
 import {Provider} from 'react-redux'
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <Provider store={store}>
+      <h1>Redux</h1>
+    </Provider>
   );
 }
 
