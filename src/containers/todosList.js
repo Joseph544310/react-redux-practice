@@ -12,6 +12,7 @@ const TodosList = props => {
             completed: false
         }
         props.addTodo(todo)
+        setTask('')
     }
 
     return (
