@@ -12,7 +12,7 @@ export function deleteTodo(id) {
     }
 }
 
-export function setCompleted(id, completed) {
+export function setCompletedTodo(id, completed) {
     return {
         type: 'SET_COMPLETED_TODO',
         payload: {
