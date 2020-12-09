@@ -20,7 +20,7 @@ const TodosList = props => {
         <div>
             <h1>TodosList</h1>
             <ul>
-                {props.todos.map(todo => <li>
+                {props.todos.map(todo => <li key={todo.id}>
                         {todo.task}
                         {todo.completed?<p> completed </p>: <p> not completed </p>}
                         <button onClick={()=> props.setCompletedTodo(todo.id, !todo.completed)}>Flip status</button>
