@@ -11,3 +11,13 @@ export function deleteTodo(id) {
         payload: id
     }
 }
+
+export function setCompleted(id, completed) {
+    return {
+        type: 'SET_COMPLETED_TODO',
+        payload: {
+            id: id,
+            completed: completed
+        }
+    }
+}
