@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {connect} from 'react-redux'
+import * as todosActions from '../actions/todosActions'
 
 const TodosList = props => {
     const [task, setTask] = useState('')
@@ -10,7 +11,7 @@ const TodosList = props => {
             task: task,
             completed: false
         }
-        props.add(todo)
+        props.addTodo(todo)
     }
 
     return (
@@ -33,17 +34,17 @@ const mapStateToProps = state => {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        add: (todo) => dispatch({
-            type: 'ADD_TODO',
-            payload: todo
-        }),
-        delete: (id) => dispatch({
-            type: 'DELETE_TODO',
-            payload: id
-        })
-    }
-}
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         addTodo: (todo) => dispatch({
+//             type: 'ADD_TODO',
+//             payload: todo
+//         }),
+//         deleteTodo: (id) => dispatch({
+//             type: 'DELETE_TODO',
+//             payload: id
+//         })
+//     }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodosList)
+export default connect(mapStateToProps, todosActions)(TodosList)
