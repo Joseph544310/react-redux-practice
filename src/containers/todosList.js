@@ -19,7 +19,10 @@ const TodosList = props => {
         <div>
             <h1>TodosList</h1>
             <ul>
-                {props.todos.map(todo => <li>{todo.task}</li>)}
+                {props.todos.map(todo => <li>
+                        {todo.task}
+                        {todo.completed?<p> completed </p>: <p> not completed </p>}
+                    </li>)}
             </ul>  
             <form onSubmit={addTodo}>
                 <input type='text' required onChange={e => setTask(e.target.value)} value={task}/>
