@@ -8,6 +8,7 @@ const TodosList = props => {
     const addTodo = event => {
         event.preventDefault()
         const todo = {
+            id: new Date().getUTCMilliseconds(),
             task: task,
             completed: false
         }
@@ -22,6 +23,7 @@ const TodosList = props => {
                 {props.todos.map(todo => <li>
                         {todo.task}
                         {todo.completed?<p> completed </p>: <p> not completed </p>}
+                        <button onClick={()=> props.setCompletedTodo(todo.id, !todo.completed)}>Flip status</button>
                     </li>)}
             </ul>  
             <form onSubmit={addTodo}>

@@ -25,7 +25,7 @@ export default function reducer(state={
                 }
                 return {
                     ...state,
-                    todos: [...state.todos.slice(0, index), newTodo, ...state.todos.slice(index)]
+                    todos: [...state.todos.slice(0, index), newTodo, ...state.todos.slice(index+1)]
                 }
 
             default:
