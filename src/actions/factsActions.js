@@ -1,12 +1,12 @@
 import Axios from 'axios'
 
-export function fetchTweets() {
+export function fetchFact() {
     const response = Axios({
         method:'GET',
-        url:' https://uselessfacts.jsph.pl/'
+        url:'https://uselessfacts.jsph.pl/today'
     })
     return {
-        type: 'FETCH_TWEETS',
+        type: 'FETCH_FACT',
         payload: response
     }
 }
