@@ -24,6 +24,7 @@ const TodosList = props => {
                 {props.todos.map(todo => <li key={todo.id}>
                         <Todo todo={todo}/>
                         <button onClick={()=> props.setCompletedTodo(todo.id, !todo.completed)}>Flip status</button>
+                        <button onClick={()=> props.deleteTodo(todo.id)}>Remove</button>
                     </li>)}
             </ul>  
             <form onSubmit={addTodo}>
