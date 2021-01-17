@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import Todo from '../components/todo'
 import {connect} from 'react-redux'
 import * as todosActions from '../actions/todosActions'
 
@@ -21,8 +22,7 @@ const TodosList = props => {
             <h1>TodosList</h1>
             <ul>
                 {props.todos.map(todo => <li key={todo.id}>
-                        {todo.task}
-                        {todo.completed?<p> completed </p>: <p> not completed </p>}
+                        <Todo todo={todo}/>
                         <button onClick={()=> props.setCompletedTodo(todo.id, !todo.completed)}>Flip status</button>
                     </li>)}
             </ul>  

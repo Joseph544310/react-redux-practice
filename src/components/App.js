@@ -1,8 +1,8 @@
 import './App.css';
-import store from './store'
+import store from '../store'
 import {Provider} from 'react-redux'
-import TodosList from './containers/todosList'
-import FactsList from './containers/factsList'
+import TodosList from '../containers/todosList'
+import FactsList from '../containers/factsList'
 
 function App() {
   return (
