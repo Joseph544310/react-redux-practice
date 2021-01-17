@@ -5,7 +5,11 @@ export default function reducer(state={
         case 'FETCH_FACT':
             return {
                 ...state,
-                facts: [...state.facts, action.payload.data]
+                facts: [...state.facts, action.payload.data.text]
+            }
+        default:
+            return {
+                ...state
             }
     }
 
